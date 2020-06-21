@@ -86,6 +86,14 @@ class TestContext {
 }
 ```
 
+A JUnit based test runner. This can be called from the IDE or using Maven exec plugin.
+```kotlin
+@RunWith(Cucumber::class)
+@CucumberOptions(features = ["classpath:features/Example.feature"],
+        tags = "not @Wip", glue = ["classpath:steps"], plugin = ["pretty", "html:target/cucumber/html"])
+class ExampleFeatureTest
+```
+
 ## Running Cucumber Tests
 
 Using executable jar file:
@@ -105,6 +113,20 @@ mvn test -Dtest=ExampleFeatureTest
 ```
 
 Using Docker:
+
+Dockerfile
+```docker
+FROM jecklgamis/openjdk-8-jre:latest
+MAINTAINER Jerrico Gamis <jecklgamis@gmail.com>
+
+RUN mkdir -m 0755 -p /cucumber-jvm-kotlin-example
+
+COPY target/cucumber-jvm-kotlin-example.jar /cucumber-jvm-kotlin-example
+COPY docker-entrypoint.sh /cucumber-jvm-kotlin-example
+
+CMD ["/cucumber-jvm-kotlin-example/docker-entrypoint.sh"]
+```
+
 
 Build Docker image (see `build-docker-image.sh`)
 ```shell script
