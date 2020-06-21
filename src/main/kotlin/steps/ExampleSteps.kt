@@ -1,7 +1,7 @@
 package steps
 
-import io.cucumber.core.api.Scenario
 import io.cucumber.java8.En
+import io.cucumber.java8.Scenario
 import org.slf4j.LoggerFactory
 import util.TestContext
 import javax.inject.Inject

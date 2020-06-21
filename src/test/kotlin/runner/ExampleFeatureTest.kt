@@ -6,6 +6,6 @@ import org.junit.runner.RunWith
 
 @RunWith(Cucumber::class)
 @CucumberOptions(features = ["classpath:features/Example.feature"],
-        tags = ["not @Wip"], glue = ["classpath:steps"], plugin = ["pretty", "html:target/cucumber/html"])
+        tags = "not @Wip", glue = ["classpath:steps"], plugin = ["pretty", "html:target/cucumber/html"])
 class ExampleFeatureTest
 
