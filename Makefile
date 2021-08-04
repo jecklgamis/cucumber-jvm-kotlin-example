@@ -5,7 +5,7 @@ default:
 dist:
 	./mvnw clean package
 image:
-	 docker build -t $(IMAGE_NAME):$(IMAGE_TAG) -t $(IMAGE_NAME):$(IMAGE_TAG) .
+	 docker build -t $(IMAGE_NAME):$(IMAGE_TAG) -t $(IMAGE_NAME):$(IMAGE_TAG) -t $(IMAGE_NAME):latest .
 run:
 	 docker run $(IMAGE_NAME):$(IMAGE_TAG)
 run-bash:
@@ -16,5 +16,4 @@ push:
 tag:
 	 git tag -m "cucumber-jvm-kotlin-example-v$(IMAGE_TAG)" -a "v$(IMAGE_TAG)"
 	 git push --tags
-
-
+all: dist image
