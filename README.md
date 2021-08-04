@@ -1,5 +1,7 @@
 ## cucumber-jvm-kotlin-example
 
+[![Java CI](https://github.com/jecklgamis/cucumber-jvm-kotlin-example/actions/workflows/java-ci.yaml/badge.svg?branch=master)](https://github.com/jecklgamis/cucumber-jvm-kotlin-example/actions/workflows/java-ci.yaml)
+
 This is an example Cucumber-JVM project.
 
 * Uses Kotlin step definitions
