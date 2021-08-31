@@ -1,6 +1,7 @@
 ## cucumber-jvm-kotlin-example
 
-[![Java CI](https://github.com/jecklgamis/cucumber-jvm-kotlin-example/actions/workflows/java-ci.yaml/badge.svg?branch=master)](https://github.com/jecklgamis/cucumber-jvm-kotlin-example/actions/workflows/java-ci.yaml)
+[![Build](https://github.com/jecklgamis/cucumber-jvm-kotlin-example/actions/workflows/build.yml/badge.svg)](https://github.com/jecklgamis/cucumber-jvm-kotlin-example/actions/workflows/build.yml)
+
 
 This is an example Cucumber-JVM project.
 
@@ -153,7 +154,7 @@ plugin installed.
 
 ## Other Cucumber-JVM Examples 
 * https://github.com/jecklgamis/cucumber-jvm-kotlin-example
-* https://github.com/jecklgamis/cucumber-jvm-scala-example
+* https://github.com/jecklgamis/cucumber-jvm-kotlin-example
 
 ## Links
 * https://cucumber.io/docs
