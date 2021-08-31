@@ -152,7 +152,7 @@ In Intellij, you can also run the scenario directly from the feature file. Ensur
 plugin installed.
 
 ## Other Cucumber-JVM Examples 
-* https://github.com/jecklgamis/cucumber-jvm-java-example
+* https://github.com/jecklgamis/cucumber-jvm-kotlin-example
 * https://github.com/jecklgamis/cucumber-jvm-scala-example
 
 ## Links
