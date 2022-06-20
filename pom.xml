@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <kotlin.version>1.5.21</kotlin.version>
+        <kotlin.version>1.6.0</kotlin.version>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <cucumber.version>6.10.4</cucumber.version>
     </properties>
