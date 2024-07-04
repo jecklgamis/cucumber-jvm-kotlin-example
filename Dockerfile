@@ -1,18 +1,18 @@
-FROM jecklgamis/openjdk-8-jre:latest
+FROM ubuntu:24.04
 MAINTAINER Jerrico Gamis <jecklgamis@gmail.com>
 
-ENV APP_HOME /app
-RUN mkdir -m 0755 -p ${APP_HOME}
+RUN apt update -y && apt install -y openjdk-21-jre-headless && rm -rf /var/lib/apt/lists/*
 
-COPY target/cucumber-jvm-kotlin-example.jar ${APP_HOME}
+ENV APP_HOME /app
+RUN mkdir -m 0755 -p $APP_HOME
+COPY target/cucumber-jvm-kotlin-example.jar $APP_HOME
 
 RUN groupadd -r app && useradd -r -gapp app
-RUN chown -R app:app ${APP_HOME}
+RUN chown -R app:app $APP_HOME
 
-COPY docker-entrypoint.sh /
-RUN chmod +x /docker-entrypoint.sh
-
+WORKDIR $APP_HOME
 USER app
-WORKDIR ${APP_HOME}
+COPY docker-entrypoint.sh /
 CMD ["/docker-entrypoint.sh"]
+
 

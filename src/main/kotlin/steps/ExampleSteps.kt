@@ -2,9 +2,9 @@ package steps
 
 import io.cucumber.java8.En
 import io.cucumber.java8.Scenario
+import jakarta.inject.Inject
 import org.slf4j.LoggerFactory
 import util.TestContext
-import javax.inject.Inject
 
 class ExampleSteps @Inject constructor(private val testContext: TestContext) : En {
     private val log = LoggerFactory.getLogger(ExampleSteps::class.java)
@@ -28,6 +28,5 @@ class ExampleSteps @Inject constructor(private val testContext: TestContext) : E
 
         Then("^I can also verify that$") {
         }
-
     }
 }
