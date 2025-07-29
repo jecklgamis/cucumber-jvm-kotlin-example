@@ -1,32 +1,44 @@
 package steps
 
-import io.cucumber.java8.En
-import io.cucumber.java8.Scenario
-import jakarta.inject.Inject
+import com.google.inject.Inject
+import io.cucumber.java.After
+import io.cucumber.java.Before
+import io.cucumber.java.Scenario
+import io.cucumber.java.en.Given
+import io.cucumber.java.en.Then
+import io.cucumber.java.en.When
 import org.slf4j.LoggerFactory
 import util.TestContext
 
-class ExampleSteps @Inject constructor(private val testContext: TestContext) : En {
+class ExampleSteps @Inject constructor(private val testContext: TestContext) {
     private val log = LoggerFactory.getLogger(ExampleSteps::class.java)
 
-    init {
-        configureSteps()
+    @Before
+    fun setupScenario(scenario: Scenario) = log.info("Before scenario: {}", scenario.name)
+
+    @After
+    fun tearDownScenario(scenario: Scenario) = log.info("After scenario: {}", scenario.name)
+
+    @Given("this pre condition")
+    fun thisPreCondition() = testContext.put("some-key", "some-value")
+
+    @Given("that pre condition")
+    fun thatPreCondition() {
     }
 
-    private fun configureSteps() {
-        Before { scenario: Scenario -> log.info("Before scenario : " + scenario.name) }
+    @When("I do this")
+    fun iDoThis() {
+    }
 
-        After { scenario: Scenario -> log.info("After scenario : " + scenario.name) }
+    @When("I do that")
+    fun iDoThat() {
+    }
 
-        Given("^this pre condition$") { testContext.put("some-key", "some-value") }
+    @Then("I can verify that")
+    fun iCanVerifyThat() {
+    }
 
-        When("^I do this$") { }
-
-        When("^I do that$") { }
-
-        Then("^I can verify that$") { assert(testContext["some-key"] == "some-value") }
-
-        Then("^I can also verify that$") {
-        }
+    @Then("I can also verify that")
+    fun iCanAlsoVerifyThat() {
     }
 }

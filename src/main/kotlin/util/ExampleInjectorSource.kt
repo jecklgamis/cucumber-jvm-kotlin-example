@@ -7,7 +7,6 @@ import io.cucumber.guice.CucumberModules
 import io.cucumber.guice.InjectorSource
 
 class ExampleInjectorSource : InjectorSource {
-    override fun getInjector(): Injector {
-        return Guice.createInjector(Stage.PRODUCTION, CucumberModules.createScenarioModule(), ExampleTestModule())
-    }
+    override fun getInjector(): Injector =
+        Guice.createInjector(Stage.PRODUCTION, CucumberModules.createScenarioModule(), ExampleTestModule())
 }
